@@ -12,8 +12,9 @@ import javax.persistence.Id;
 
 public class Review_Model {
 
-	@Id //The id property is annotated with @Id 
-	    //so that JPA will recognize it as the object’s ID. 
+	@Id 
+	//The id property is annotated with @Id 
+	//so that JPA will recognize it as the object’s ID. 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	//The id property is also annotated with @GeneratedValue 
 	//to indicate that the ID should be generated automatically.
