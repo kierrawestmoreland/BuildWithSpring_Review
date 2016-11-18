@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="'Review of Kierra's Reviews AGAIN">
+</title>
+<title th:text="${selectedReview.title}"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+ 	<p th:text="${selctedReview.id}"/>
+ 	<p th:text="${selctedReview.title}"/>
+ 	<p th:text="${selctedReview.author}"/>
+ 	<p th:text="${selctedReview.content}"/>
+ 	<p th:text="${selctedReview.date}"/>
+ 	
+</body>
+</html>
