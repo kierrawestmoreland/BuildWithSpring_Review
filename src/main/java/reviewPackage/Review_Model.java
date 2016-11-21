@@ -26,7 +26,7 @@ public class Review_Model {
 	private Date date;
 	private String author;
 	private String content;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.MERGE)
 	private Category category;
 	
 	public Review_Model(String title, String author, String content, Date date, Category category) {

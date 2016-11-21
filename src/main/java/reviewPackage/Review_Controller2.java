@@ -18,13 +18,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 	    public String displayReview(@RequestParam("id") long id, Model model) {
 	    	Review_Model reviewObject = repository.findOne(id);
 			model.addAttribute("selectedReview", reviewObject);
-	    	return "review_View";
+	    	return "review_View_2";
 	    }
 	   
 	    @RequestMapping("/reviewPackALL")
 	    public String displayAll(Model model){
-	    	Iterable<Review_Model> reviews = repository.findAll();
-	    	model.addAttribute("reviews", reviews);
-	    	return "all-reviews";
+	    	Iterable<Review_Model> reviewAll_2 = repository.findAll();
+	    	model.addAttribute("reviews", reviewAll_2);
+	    	return "reviewAll_2";
 	    }
 }

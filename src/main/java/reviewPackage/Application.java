@@ -24,22 +24,16 @@ public class Application {
 		return new ReviewPopulator();
 	}
 
-	private class ReviewPopulator implements CommandLineRunner {
-        @Override
-        public void run(String... args) throws Exception {
-            // code to populate reviews
-        }
-	}
 	@Resource
 	private CategoryRepository categoryRepository;
 	
-	public class ReviewPopulatorRunner implements CommandLineRunner {
+	public class ReviewPopulator implements CommandLineRunner {
 		@Override
 		public void run(String... args) throws Exception {
 			
-			Category nonfiction = new Category ("non fiction");
-			Category suspense = new Category ("suspense");
-			Category selfhelp = new Category ("self help");
+			Category nonfiction = categoryRepository.save(new Category ( "non fiction"));
+			Category suspense = categoryRepository.save(new Category ("suspense"));
+			Category selfhelp = categoryRepository.save(new Category ( "self help"));
 			
 			reviewRepository_2.save(new Review_Model("Men are from Mars, Women are from Venus pt.3", "Oprah Winfrey", "Men are from Mars.", new Date(), nonfiction));
 			reviewRepository_2.save(new Review_Model("The Coldest Winter Ever", "Zane", "It was a very cold winter....", new Date(), suspense));
