@@ -34,7 +34,7 @@ public class Application {
 	public class ReviewPopulatorRunner implements CommandLineRunner {
 		@Override
 		public void run(String... args) throws Exception {
-			String myReview = "This book was flames!...";
+			String myReview = "All books were just ok";
 			
 			reviewRepository_2.save(new Review_Model("Men are from Mars, Women are from Venus pt.3", "Oprah Winfrey", "Men are from Mars.", new Date(), "non_ficton"));
 			reviewRepository_2.save(new Review_Model("Men are from Mars, Women are from Venus pt.3", "Oprah Winfrey", "Men are from Mars.", new Date(), "non_ficton"));
