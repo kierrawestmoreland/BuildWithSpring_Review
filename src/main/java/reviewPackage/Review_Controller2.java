@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 	public class Review_Controller2 {
 
 	@Resource
-	private ReviewRepository repository;
+	private ReviewRepository_2 repository;
 
 		
 	    @RequestMapping("/reviewPackage")//package name
 	    public String displayReview(@RequestParam("id") long id, Model model) {
-	    	Review_Model review = repository.findOne(id);
-			model.addAttribute("selectedReview", review);
+	    	Review_Model reviewObject = repository.findOne(id);
+			model.addAttribute("selectedReview", reviewObject);
 	    	return "review_View";
 	    }
 	   

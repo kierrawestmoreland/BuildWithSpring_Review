@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>All of Kierra's Reviews AGAIN </title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Current Reviews</h1>
+	<div th:each="review : ${reviews}" class="reviewEntry">
+		<a th:href="@{/review(id=${review.id})}" th:text=" ${review.title} + '  (' + ${review.category.name} + ')'"></a>
+	</div>
+</body>
+</html>
