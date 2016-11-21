@@ -1,5 +1,7 @@
 package reviewPackage;
 
+import java.util.Date;
+
 import javax.annotation.Resource;
 
 import org.springframework.boot.CommandLineRunner;
@@ -34,11 +36,16 @@ public class Application {
 	public class ReviewPopulatorRunner implements CommandLineRunner {
 		@Override
 		public void run(String... args) throws Exception {
-			String myReview = "All books were just ok";
 			
-			reviewRepository_2.save(new Review_Model("Men are from Mars, Women are from Venus pt.3", "Oprah Winfrey", "Men are from Mars.", new Date(), "non_ficton"));
-			reviewRepository_2.save(new Review_Model("Men are from Mars, Women are from Venus pt.3", "Oprah Winfrey", "Men are from Mars.", new Date(), "non_ficton"));
-			reviewRepository_2.save(new Review_Model("Men are from Mars, Women are from Venus pt.3", "Oprah Winfrey", "Men are from Mars.", new Date(), "non_ficton"));
-			reviewRepository_2.save(new Review_Model("Men are from Mars, Women are from Venus pt.3", "Oprah Winfrey", "Men are from Mars.", new Date(), "non_ficton"));
-			reviewRepository_2.save(new Review_Model("Men are from Mars, Women are from Venus pt.3", "Oprah Winfrey", "Men are from Mars.", new Date(), "non_ficton"));
+			Category nonfiction = new Category ("non fiction");
+			Category suspense = new Category ("suspense");
+			Category selfhelp = new Category ("self help");
+			
+			reviewRepository_2.save(new Review_Model("Men are from Mars, Women are from Venus pt.3", "Oprah Winfrey", "Men are from Mars.", new Date(), nonfiction));
+			reviewRepository_2.save(new Review_Model("The Coldest Winter Ever", "Zane", "It was a very cold winter....", new Date(), suspense));
+			reviewRepository_2.save(new Review_Model("Barack Obama, ahead of his time", "Kierra Westmoreland", "It was 2008, the start of the great recession.", new Date(), nonfiction));
+			reviewRepository_2.save(new Review_Model("Fostering kittens made easy", "K. More", "Determine how much free time you'll be able to give.", new Date(), selfhelp));
+			reviewRepository_2.save(new Review_Model("Make your first indoor garden", "J River", "First pick an area with natural sunlight.", new Date(), selfhelp));
+}
+	}
 }
